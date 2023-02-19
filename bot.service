@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Bot
+After=network.target
+
+[Service]
+User=rootUser = root
+Group = rootType=simple
+WorkingDirectory=/opt/tgbot
+ExecStart=python3 run.py
+Restart=always
+RestartSec = 5
+TimeoutStartSec = infinity
+
+[Install]
+WantedBy=multi-user.target
